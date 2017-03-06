@@ -17,17 +17,16 @@ int Die::getSide() const
 	return side;
 }
 
-void Die::setSide(int i) const
+void Die::setSide(int i)
 {
-	//side = i;
+	side = i;
 }
 
-
-int Die::roll(void) const
+int Die::roll(void) 
 {
 	int i = rand() % 6 + 1;
-	//setSide( i );
-	showSide(i);
+	setSide( i );
+	showSide( side );
 	return 0;
 }
 

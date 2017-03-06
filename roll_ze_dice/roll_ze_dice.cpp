@@ -10,30 +10,41 @@ using std::cout;
 using std::endl;
 using std::cin;
 
+// TODO: have the dice displayed side by side, not on top of one another...
 
 int main()
 {
 
-	char c;	// hold user choice
+	char rollAgain;		// hold user choice for rolling again
 
-	// seed the random number generator
-	srand(time(0));
+	// technically you don't even need this, you can just make one die and keep rolling it over and over again. 
+	Die diceArray[9];	// make an array of dice
+	
+	srand(time(0));		// seed the random number generator
 
-	// how many dice?
-	int numDice = 0;
-	Die diceArray[9];
+	int numDice = 0;	// how many dice does the user wanna roll?
 
-	cout << "How many dice? ( 0 - 9 )" << endl;
+	do {
+		
+		cout << endl;
+		cout << "How many dice? ( 0 - 9 ) : ";
 
-	cin >> numDice ;
+		cin >> numDice ;	// get user input
 
-	for (int i=0; i < numDice; ++i) {
+		for (int i=0; i < numDice; ++i) {
+			
+			// for the number of selected dice, give 'em a roll.
+			// still rolls when you go outside the bounds of 9 dice...
+			diceArray[i].roll();
 
-		diceArray[i].roll();
-		// the dice should've already been instantiated
-		//diceArray[] = new Die;
+		}
+		
+		cout << endl;
+		cout << "Roll ze dice again? y/n : ";
+		
+		cin >> rollAgain;
 
-	}
+	} while ( rollAgain == 'y' );
 
 	return 0;
 }
