@@ -14,7 +14,6 @@ using std::cin;
 int main()
 {
 
-
 	char c;	// hold user choice
 
 	// seed the random number generator
@@ -24,12 +23,9 @@ int main()
 	int numDice = 0;
 	Die diceArray[9];
 
-	do {
+	cout << "How many dice? ( 0 - 9 )" << endl;
 
-		cout << "How many dice? ( 0 - 9 )" << endl;
-		
-
-	} while ( ( c = cin.get() ) != '!' );
+	cin >> numDice ;
 
 	for (int i=0; i < numDice; ++i) {
 

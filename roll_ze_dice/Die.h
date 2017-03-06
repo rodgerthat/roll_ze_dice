@@ -23,7 +23,7 @@ public:
 private:
 
 	int side;
-	void showSide() const;
+	void showSide(int) const;
 	void setSide(int) const;
 	int getSide() const;
 
