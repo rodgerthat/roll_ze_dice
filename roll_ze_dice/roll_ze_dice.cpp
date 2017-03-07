@@ -23,6 +23,7 @@ int main()
 	srand(time(0));		// seed the random number generator
 
 	int numDice = 0;	// how many dice does the user wanna roll?
+	int theAnswer = 0;	// something to store the answer in
 
 	do {
 		
@@ -36,8 +37,11 @@ int main()
 			// for the number of selected dice, give 'em a roll.
 			// still rolls when you go outside the bounds of 9 dice...
 			diceArray[i].roll();
+			theAnswer *= diceArray[i].getSide();	// calculate ze answer whilst we rollolololol
 
 		}
+
+		// query the user for ze answer!
 		
 		cout << endl;
 		cout << "Roll ze dice again? y/n : ";

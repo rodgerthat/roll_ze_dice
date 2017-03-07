@@ -19,13 +19,13 @@ public:
 	~Die(void);
 
 	int roll(void);
+	int getSide() const;
 
 private:
 
 	int side;
 	void showSide(int) const;
 	void setSide(int);
-	int getSide() const;
 
 };
 
