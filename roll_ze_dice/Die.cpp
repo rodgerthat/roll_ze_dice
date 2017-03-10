@@ -1,7 +1,6 @@
 #include "Die.h"
 
 
-
 Die::Die(void)
 	: side(0)
 {

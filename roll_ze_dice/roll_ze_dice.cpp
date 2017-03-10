@@ -5,6 +5,7 @@
 #include <cstdlib>
 #include <ctime>
 #include "Die.h"
+#include "Response.h"
 
 using std::cout;
 using std::endl;
@@ -19,6 +20,7 @@ int main()
 
 	// technically you don't even need this, you can just make one die and keep rolling it over and over again. 
 	Die diceArray[9];	// make an array of dice
+	Response response;	// get some witty responses ready.
 	
 	srand(time(0));		// seed the random number generator
 
@@ -28,6 +30,8 @@ int main()
 	int userAnswer = 0;	// 
 
 	// output catchy gaem titles
+	system("CLS");	// windows clear screen
+	cout << endl;
 	cout << "********************************" << endl;
 	cout << "* Roll ze Dice : Product Game! *" << endl;
 	cout << "********************************" << endl;
@@ -64,9 +68,15 @@ int main()
 			//cout << "theAnswer : " << theAnswer << endl;
 			//cout << "userAnswer : " << userAnswer << endl;
 
-		} while ( theAnswer != userAnswer );
+			if ( theAnswer != userAnswer ) {
+				cout << "That answer is incorrect..." << endl;
+				response.getNegativeReponse();
+			}
 
+		} while ( theAnswer != userAnswer );
+		
 		cout << "YAY! Correct!" << endl;
+		response.getPostiveResponse();
 		userScore += theAnswer;
 		cout << "You're score is : " << userScore << endl;
 		
